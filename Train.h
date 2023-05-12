@@ -75,7 +75,7 @@ protected:
 
 public:
 //Setters
-    std::string setDriver(std::string Driver);
+    std::string setDriver(std::string driver);
     trackLine setLine(trackLine Line);
     int setPlatformNum(int platformNum);
     location setStartPlace(location startPlace);
