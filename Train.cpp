@@ -5,27 +5,18 @@ Metlink
 */
 #include "Train.h"
 
-//  Train Class
+void Train::setTrainNum(int trainNum) {
+    this->trainNum = trainNum;
+}
 
-//Setters
-int Train::setTrainNum()
-{
+void Train::setTrainType(TrainType trainType) {
+    this->trainType = trainType;
+}
+
+int Train::getTrainNum() const {
     return trainNum;
 }
 
-TrainType Train::setTrainType()
-{
+TrainType Train::getTrainType() const {
     return trainType;
 }
-
-//Getters
-int Train::getTrainNum(int trainNum)
-{
-    return trainNum;
-}
-
-TrainType Train::getTrainType(TrainType trainType)
-{
-    return trainType;
-}
-
