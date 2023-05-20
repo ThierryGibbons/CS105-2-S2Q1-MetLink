@@ -13,6 +13,7 @@ Metlink
 
 class Trip : public Train {
 public:
+//Setters
     void setDriver(const std::string& TrainDriver);
     void setLine(TrackLine Line);
     void setPlatformNum(int PlatformNum);
@@ -21,6 +22,15 @@ public:
     void setStartTime(int StartTime);
     void setEndTime(int EndTime);
     void setCompartments(int Compartments);
+//Getters
+    std::string getDriver() const;
+    TrackLine getLine() const;
+    int getPlatformNum() const;
+    Location getStartPlace() const;
+    Location getEndPlace() const;
+    int getStartTime() const;
+    int getEndTime() const;
+    int getCompartments() const;
 
 private:
     std::string Driver;

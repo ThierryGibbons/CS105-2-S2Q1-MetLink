@@ -5,6 +5,7 @@ Metlink
 */
 #include "Trip.h"
 
+//Setters
 void Trip::setDriver(const std::string& TrainDriver) {
     Driver = TrainDriver;
 }
@@ -35,4 +36,37 @@ void Trip::setEndTime(int EndTime) {
 
 void Trip::setCompartments(int Compartments) {
     this->Compartments = Compartments;
+}
+
+//Getters
+std::string Trip::getDriver() const {
+    return Driver;
+}
+
+TrackLine Trip::getLine() const {
+    return Line;
+}
+
+int Trip::getPlatformNum() const {
+    return PlatformNum;
+}
+
+Location Trip::getStartPlace() const {
+    return StartPlace;
+}
+
+Location Trip::getEndPlace() const {
+    return EndPlace;
+}
+
+int Trip::getStartTime() const {
+    return StartTime;
+}
+
+int Trip::getEndTime() const {
+    return EndTime;
+}
+
+int Trip::getCompartments() const {
+    return Compartments;
 }
