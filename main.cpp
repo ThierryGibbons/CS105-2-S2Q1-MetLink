@@ -8,8 +8,32 @@ Metlink
 #include <iostream>
 
 int main() {
-    // Create a passenger train
     PassengerTrain passengerTrain;
+
+    int trainNum_;
+    std::string trainType_;
+
+    //TODO: Create train based on user input
+    std::cout << "=======\n";
+    std::cout << "Metlink\n";
+    std::cout << "=======\n\n";
+    std::cout << "====================\n";
+    //Take inputs from user
+    std::cout << "Enter the Train numer (eg. 123) and type of train (eg. Passenger / Goods):";
+    std::cin >> trainNum_;
+    passengerTrain.setTrainNum(trainNum_);
+    std::cin >> trainType_;
+    if (trainType_ == "Passenger") {
+        passengerTrain.setTrainType(TrainType::Passenger);
+    }
+    else if (trainType_ == "Goods") {
+        passengerTrain.setTrainType(TrainType::Goods);
+    }
+    else {
+        std::cout << "Invalid input";
+    }
+
+    // Create a initial Passenger Train
     passengerTrain.setTrainNum(1);
     passengerTrain.setTrainType(TrainType::Passenger);
     passengerTrain.setDriver("John Doe");
@@ -24,7 +48,7 @@ int main() {
     passengerTrain.setCycleAllowed(true);
     passengerTrain.setCalegory(true);
 
-    // Create a goods train
+    // Create a initial Goods Train
     GoodsTrain goodsTrain;
     goodsTrain.setTrainNum(2);
     goodsTrain.setTrainType(TrainType::Goods);
@@ -38,8 +62,23 @@ int main() {
     goodsTrain.setCompartments(5);
     goodsTrain.setGoodsType(GoodsType::Wood);
 
-    // Now you can use these instances in your application logic
-    // ...
+
+    // Print the initial Passenger Train
+    std::cout << "Passenger Train:" << std::endl;
+    std::cout << "Train Number: " << passengerTrain.getTrainNum() << std::endl;
+    std::cout << "Train Type: " << static_cast<int>(passengerTrain.getTrainType()) << std::endl;
+    std::cout << "Driver: " << passengerTrain.getDriver() << std::endl;
+    std::cout << "Line: " << static_cast<int>(passengerTrain.getLine()) << std::endl;
+    std::cout << "Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
+    std::cout << "Start Place: " << static_cast<int>(passengerTrain.getStartPlace()) << std::endl;
+    std::cout << "End Place: " << static_cast<int>(passengerTrain.getEndPlace()) << std::endl;
+    std::cout << "Start Time: " << passengerTrain.getStartTime() << std::endl;
+    std::cout << "End Time: " << passengerTrain.getEndTime() << std::endl;
+    std::cout << "Compartments: " << passengerTrain.getCompartments() << std::endl;
+    std::cout << "Depature Time: " << passengerTrain.getDepatureTime() << std::endl;
+    std::cout << "Cycle Allowed: " << passengerTrain.getCycleAllowed() << std::endl;
+    std::cout << "Calegory: " << passengerTrain.getCalegory() << std::endl;
+    std::cout << std::endl;
 
     return 0;
 }
