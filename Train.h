@@ -15,7 +15,7 @@ public:
     int getTrainNum() const;
     TrainType getTrainType() const;
 
-private:
+protected:
     int trainNum;
     TrainType trainType;
 };

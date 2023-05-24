@@ -32,7 +32,7 @@ public:
     int getEndTime() const;
     int getCompartments() const;
 
-private:
+protected:
     std::string Driver;
     TrackLine Line;
     int PlatformNum;

@@ -14,7 +14,7 @@ public:
     void setGoodsType(GoodsType GoodsType);
     GoodsType getGoodsType() const;
 
-private:
+protected:
     GoodsType Goods;
 };
 

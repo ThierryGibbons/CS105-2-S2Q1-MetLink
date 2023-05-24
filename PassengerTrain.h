@@ -17,7 +17,7 @@ public:
     bool getCycleAllowed() const;
     bool getCalegory() const;
 
-private:
+protected:
     int DepatureTime;
     bool CycleAllowed;
     bool Calegory;
