@@ -392,20 +392,22 @@ int main() {
                 std::cout << "\n=============\n\n";
                 std::cout << "\n====================\n";
 
-                std::cout << "\nPassenger Train Details\n";
+                std::cout << "\nPassenger Train Details:\n";
                 for (const auto& passengerTrain : passengerTrains) //print all passenger trains
                 {
-                    std::cout << "\n";
+                    std::cout << "\n\n====================\n";
                     newPassengerTrain.printPassengerTrains(passengerTrain);
+                    std::cout << "====================\n";
                 }
 
                 std::cout << "\n====================\n";
 
-                std::cout << "\nGoods Train Details\n";
+                std::cout << "\nGoods Train Details:\n";
                 for (const auto& goodsTrain : goodsTrains) //print all goods trains
                 {
-                    std::cout << "\n";
+                    std::cout << "\n\n====================\n";
                     newGoodsTrain.printGoodsTrains(goodsTrain);
+                    std::cout << "====================\n";
                 }
                 break;
             case 4:
