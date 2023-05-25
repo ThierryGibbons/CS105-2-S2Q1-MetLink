@@ -8,11 +8,14 @@ Metlink
 
 #include "Trip.h"
 #include "GoodsType.h"
+#include <iostream>
 
 class GoodsTrain : public Trip {
 public:
     void setGoodsType(GoodsType GoodsType);
     GoodsType getGoodsType() const;
+
+    void printGoodsTrains(const GoodsTrain& GoodsTrain);
 
 protected:
     GoodsType Goods;

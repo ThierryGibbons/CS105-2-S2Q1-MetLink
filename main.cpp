@@ -398,6 +398,15 @@ int main() {
                     std::cout << "\n";
                     newPassengerTrain.printPassengerTrains(passengerTrain);
                 }
+
+                std::cout << "\n====================\n";
+
+                std::cout << "\nGoods Train Details\n";
+                for (const auto& goodsTrain : goodsTrains) //print all goods trains
+                {
+                    std::cout << "\n";
+                    newGoodsTrain.printGoodsTrains(goodsTrain);
+                }
                 break;
             case 4:
                 // Exit
