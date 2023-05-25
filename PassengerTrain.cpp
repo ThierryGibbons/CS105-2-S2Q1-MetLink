@@ -9,15 +9,12 @@ Metlink
 void PassengerTrain::setDepatureTime(int DepatureTime) {
     this->DepatureTime = DepatureTime;
 }
-
 void PassengerTrain::setCycleAllowed(bool CycleAllowed) {
     this->CycleAllowed = CycleAllowed;
 }
-
 void PassengerTrain::setCategory(bool Category) {
     this->Category = Category;
 }
-
 void PassengerTrain::setTrainStatus(bool TrainStatus) {
     this->TrainStatus = TrainStatus;
 }
@@ -26,21 +23,18 @@ void PassengerTrain::setTrainStatus(bool TrainStatus) {
 int PassengerTrain::getDepatureTime() const {
     return DepatureTime;
 }
-
 bool PassengerTrain::getCycleAllowed() const {
     return CycleAllowed;
 }
-
 bool PassengerTrain::getCategory() const {
     return Category;
 }
-
 bool PassengerTrain::getTrainStatus() const {
     return TrainStatus;
 }
 
+//Print Passenger Train
 void PassengerTrain::printPassengerTrains(const PassengerTrain& passengerTrain) {
-    // TRACKLINE
     std::cout << "*****" << passengerTrain.getLine() << " Line Train information*****\n";
     std::cout << "Train Number: " << passengerTrain.getTrainNum();
     std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << "\n";
