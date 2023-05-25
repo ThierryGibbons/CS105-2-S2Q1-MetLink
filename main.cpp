@@ -10,8 +10,8 @@ Metlink
 
 int main() {
 
-    std::vector<PassengerTrain> passengerTrains; //Working on this
-    std::vector<GoodsTrain> goodsTrains; //Working on this
+    std::vector<PassengerTrain> passengerTrains;
+    std::vector<GoodsTrain> goodsTrains;
 
     bool trainInput = true;
     int choice = 0;
@@ -36,16 +36,17 @@ int main() {
     std::cout << "=======\n\n";
     std::cout << "====================\n";
 
-    // Menu
-    std::cout << "1. Create Train\n";
-    std::cout << "2. Print Train\n";
-    std::cout << "3. Print All Trains\n";
-    std::cout << "4. Exit\n";
 
     do
     {
         PassengerTrain newPassengerTrain;
         GoodsTrain newGoodsTrain;
+
+        // Menu
+        std::cout << "1. Create Train\n";
+        std::cout << "2. Print Train\n";
+        std::cout << "3. Print All Trains\n";
+        std::cout << "4. Exit\n";
         std::cout << "Selection: ";
         std::cin >> choice;
 
