@@ -31,10 +31,6 @@ int main() {
     int category_;
 
     // Title
-    std::cout << "=======\n";
-    std::cout << "Metlink\n";
-    std::cout << "=======\n\n";
-    std::cout << "====================\n";
 
 
     do
@@ -43,6 +39,10 @@ int main() {
         GoodsTrain newGoodsTrain;
 
         // Menu
+        std::cout << "=======\n";
+        std::cout << "Metlink\n";
+        std::cout << "=======\n\n";
+        std::cout << "====================\n";
         std::cout << "1. Create Train\n";
         std::cout << "2. Print Train\n";
         std::cout << "3. Print All Trains\n";
@@ -418,27 +418,9 @@ int main() {
                 std::cout << "Invalid Selection\n";
                 break;
         }
+
+        std::cout << "\n\n";
     } while (choice != 4);
-
-
-    // // Print the initial Passenger Train
-    // std::cout << "Passenger Train:" << std::endl;
-    // std::cout << "Train Number: " << passengerTrain.getTrainNum() << std::endl;
-    // std::cout << "Train Type: " << static_cast<int>(passengerTrain.getTrainType()) << std::endl;
-    // std::cout << "Driver: " << passengerTrain.getDriver() << std::endl;
-    // std::cout << "Line: " << static_cast<int>(passengerTrain.getLine()) << std::endl;
-    // std::cout << "Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
-    // std::cout << "Start Place: " << static_cast<int>(passengerTrain.getStartPlace()) << std::endl;
-    // std::cout << "End Place: " << static_cast<int>(passengerTrain.getEndPlace()) << std::endl;
-    // std::cout << "Start Time: " << passengerTrain.getStartTime() << std::endl;
-    // std::cout << "End Time: " << passengerTrain.getEndTime() << std::endl;
-    // std::cout << "Compartments: " << passengerTrain.getCompartments() << std::endl;
-    // std::cout << "Depature Time: " << passengerTrain.getDepatureTime() << std::endl;
-    // std::cout << "Cycle Allowed: " << passengerTrain.getCycleAllowed() << std::endl;
-    // std::cout << "Calegory: " << passengerTrain.getCalegory() << std::endl;
-    // std::cout << std::endl;
-
-
 
     return 0;
 }
