@@ -40,15 +40,15 @@ int main() {
     std::transform(trainType_.begin(), trainType_.end(), trainType_.begin(), ::tolower); //Make trainType_ lowercase
 
     //Start Place
-    std::cout << "Enter start place of train.\n1. Waikane\n2. Porirua\n3. Kapati\n4. Taita\n5. UpperHutt\n6. Melling\n7. Johnsonville\n8. Masterton\n7. PalmerstonNorth\n8. Wellington\nSelection: ";
+    std::cout << "\nEnter start place of train.\n1. Waikane\n2. Porirua\n3. Kapati\n4. Taita\n5. UpperHutt\n6. Melling\n7. Johnsonville\n8. Masterton\n7. PalmerstonNorth\n8. Wellington\nSelection: ";
     std::cin >> startPlace_;
 
     //End Place
-    std::cout << "Enter end place of train.\n1. Waikane\n2. Porirua\n3. Kapati\n4. Taita\n5. UpperHutt\n6. Melling\n7. Johnsonville\n8. Masterton\n7. PalmerstonNorth\n8. Wellington\nSelection: ";
+    std::cout << "\nEnter end place of train.\n1. Waikane\n2. Porirua\n3. Kapati\n4. Taita\n5. UpperHutt\n6. Melling\n7. Johnsonville\n8. Masterton\n7. PalmerstonNorth\n8. Wellington\nSelection: ";
     std::cin >> endPlace_;
 
     //Driver Name
-    std::cout << "Enter Drivers Name: ";
+    std::cout << "\nEnter Drivers Name: ";
     std::cin >> driverName_;
 
     //Number of compartments
@@ -60,7 +60,7 @@ int main() {
     std::cin >> platformNum_;
 
     //Start time
-    std::cout << "Enter start time(eg. 9:00am): ";
+    std::cout << "\nEnter start time(eg. 9:00am): ";
     std::cin >> startTime_;
 
     //End time
@@ -68,27 +68,27 @@ int main() {
     std::cin >> endTime_;
 
     //Track Line
-    std::cout << "Enter track line.\n1. Kapiti\n2. HuttValley\n3. Johnsonville\n4. Wairarapa\nSelection: ";
+    std::cout << "\nEnter track line.\n1. Kapiti\n2. HuttValley\n3. Johnsonville\n4. Wairarapa\nSelection: ";
     std::cin >> trackLine_;
 
     //cycle allowed or not
     if (trainType_ == "passenger")
     {
-        std::cout << "Enter cycle allowed or not\n1. True\n2. False\nSelection: ";
+        std::cout << "\nEnter cycle allowed or not\n1. True\n2. False\nSelection: ";
         std::cin >> cycleAllowed_;
     }
 
     //train status
     if (trainType_ == "passenger")
     {
-    std::cout << "Enter train status.\n1.Departed\n2.Boarding\nSelection: ";
+    std::cout << "\nEnter train status.\n1.Departed\n2.Boarding\nSelection: ";
     std::cin >> trainStatus_;
     }
 
     //category
     if (trainType_ == "passenger")
     {
-    std::cout << "Enter category.\n1. Express\n2. Allstops\nSelection: ";
+    std::cout << "\nEnter category.\n1. Express\n2. Allstops\nSelection: ";
     std::cin >> category_;
     }
 
