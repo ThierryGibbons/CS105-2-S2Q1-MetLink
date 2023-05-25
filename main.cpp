@@ -255,7 +255,7 @@ int main() {
         std::cout << "\n=============\n\n";
         std::cout << "\n====================\n";
 
-        std::cout << "\nPassenger Train Details\n";
+        std::cout << "\nPassenger Train Details\n\n";
         for (const auto& passengerTrain : passengerTrains) //print all passenger trains
         {
             newPassengerTrain.printPassengerTrains(passengerTrain);
