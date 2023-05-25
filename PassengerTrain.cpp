@@ -40,6 +40,8 @@ bool PassengerTrain::getTrainStatus() const {
 }
 
 void PassengerTrain::printPassengerTrains(const PassengerTrain& passengerTrain) {
+    // TRACKLINE
+    std::cout << "*****" << passengerTrain.getLine() << " Line Train information*****\n";
     std::cout << "Train Number: " << passengerTrain.getTrainNum();
     std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << "\n";
     std::cout << passengerTrain.getStartPlace() << " -> " << passengerTrain.getEndPlace() << "\n";
