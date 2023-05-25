@@ -80,7 +80,7 @@ int main() {
     //train status
     if (trainType_ == "passenger")
     {
-    std::cout << "Enter train status.\n1.Departed\n2.Boarded\nSelection: ";
+    std::cout << "Enter train status.\n1.Departed\n2.Boarding\nSelection: ";
     std::cin >> trainStatus_;
     }
 
@@ -132,7 +132,7 @@ int main() {
                 newPassengerTrain.setStartPlace(Location::Wellington);
                 break;
             default:
-                std::cout << "Invalid input";
+                std::cout << "Invalid input: Start Place";
                 return 0;
         }
 
@@ -170,7 +170,7 @@ int main() {
                 newPassengerTrain.setEndPlace(Location::Wellington);
                 break;
             default:
-                std::cout << "Invalid input";
+                std::cout << "Invalid input: End Place";
                 return 0;
         }
 
@@ -211,10 +211,12 @@ int main() {
         {
             case 1:
                 newPassengerTrain.setCycleAllowed(true);
+                break;
             case 2:
                 newPassengerTrain.setCycleAllowed(false);
+                break;
             default:
-                std::cout << "Invalid input.";
+                std::cout << "Invalid input: Cycle Allowed";
                 return 0;
         }
 
@@ -234,10 +236,12 @@ int main() {
         {
             case 1:
                 newPassengerTrain.setCategory(true);
+                break;
             case 2:
                 newPassengerTrain.setCategory(false);
+                break;
             default:
-                std::cout << "Invalid input.";
+                std::cout << "Invalid input: Category";
                 return 0;
         }
     }
