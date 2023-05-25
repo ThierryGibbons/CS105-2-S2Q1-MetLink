@@ -44,7 +44,7 @@ void PassengerTrain::printPassengerTrains(const PassengerTrain& passengerTrain) 
     std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
     std::cout << passengerTrain.getStartPlace() << " -> " << passengerTrain.getEndPlace() << std::endl;
     std::cout << "Start Time: " << passengerTrain.getStartTime();
-    (passengerTrain.getCycleAllowed) ? std::cout << "     Cycle Allowed" : std::cout << "     Cycle Not Allowed";
+    (passengerTrain.getCycleAllowed) ? std::cout << "     Cycle Allowed" : std::cout << "     Cycle Not Allowed"; //FIXME: This is not working
     // std::cout << (passengerTrain.getCategory) ? "Express" : "All Stops";
 
     std::cout << "     Category: " << passengerTrain.getCategory() << std::endl;
