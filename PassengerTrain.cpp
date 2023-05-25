@@ -38,3 +38,15 @@ bool PassengerTrain::getCategory() const {
 bool PassengerTrain::getTrainStatus() const {
     return TrainStatus;
 }
+
+void PassengerTrain::printPassengerTrains(const PassengerTrain& passengerTrain) {
+    std::cout << "Train Number: " << passengerTrain.getTrainNum();
+    std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
+    std::cout << passengerTrain.getStartPlace() << " -> " << passengerTrain.getEndPlace() << std::endl;
+    std::cout << "Start Time: " << passengerTrain.getStartTime();
+    (passengerTrain.getCycleAllowed) ? std::cout << "     Cycle Allowed" : std::cout << "     Cycle Not Allowed";
+    // std::cout << (passengerTrain.getCategory) ? "Express" : "All Stops";
+
+    std::cout << "     Category: " << passengerTrain.getCategory() << std::endl;
+    std::cout << "Train Status: " << passengerTrain.getTrainStatus() << std::endl;
+}

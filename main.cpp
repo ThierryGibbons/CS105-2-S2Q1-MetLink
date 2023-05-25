@@ -10,7 +10,8 @@ Metlink
 
 int main() {
 
-    std::vector<PassengerTrain> passengerTrain; //Working on this
+    std::vector<PassengerTrain> passengerTrains; //Working on this
+    std::vector<GoodsTrain> goodsTrains; //Working on this
 
     int trainNum_;
     std::string trainType_;
@@ -243,6 +244,21 @@ int main() {
             default:
                 std::cout << "Invalid input: Category";
                 return 0;
+        }
+
+        //Add train to vector
+        passengerTrains.push_back(newPassengerTrain);
+
+        //Print train details
+        std::cout << "\n=============\n"; //Title
+        std::cout << "\nTrain Details\n";
+        std::cout << "\n=============\n\n";
+        std::cout << "\n====================\n";
+
+        std::cout << "\nPassenger Train Details\n";
+        for (const auto& passengerTrain : passengerTrains) //print all passenger trains
+        {
+            newPassengerTrain.printPassengerTrains(passengerTrain);
         }
     }
     else if (trainType_ == "goods") {

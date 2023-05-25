@@ -7,6 +7,7 @@ Metlink
 #define PASSENGERTRAIN_H
 
 #include "Trip.h"
+#include <iostream>
 
 class PassengerTrain : public Trip {
 public:
@@ -20,8 +21,8 @@ public:
     bool getCycleAllowed() const;
     bool getCategory() const;
     bool getTrainStatus() const;
-//Constructor
-    // PassengerTrain(int trainNum, TrainType trainType, Location startPlace, Location endPlace, std::string Driver, int compartments, int platformNum, std::string startTime, std::string endTime, TrackLine trackLine, bool cycleAllowed, bool trainStatus, bool category);
+
+    void printPassengerTrains(const PassengerTrain& passengerTrain) ;
 
 protected:
     int DepatureTime;
