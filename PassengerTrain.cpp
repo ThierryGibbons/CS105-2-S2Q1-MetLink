@@ -41,12 +41,10 @@ bool PassengerTrain::getTrainStatus() const {
 
 void PassengerTrain::printPassengerTrains(const PassengerTrain& passengerTrain) {
     std::cout << "Train Number: " << passengerTrain.getTrainNum();
-    std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
-    std::cout << passengerTrain.getStartPlace() << " -> " << passengerTrain.getEndPlace() << std::endl;
+    std::cout << "     Platform Number: " << passengerTrain.getPlatformNum() << "\n";
+    std::cout << passengerTrain.getStartPlace() << " -> " << passengerTrain.getEndPlace() << "\n";
     std::cout << "Start Time: " << passengerTrain.getStartTime();
-    (passengerTrain.getCycleAllowed) ? std::cout << "     Cycle Allowed" : std::cout << "     Cycle Not Allowed"; //FIXME: This is not working
-    // std::cout << (passengerTrain.getCategory) ? "Express" : "All Stops";
-
-    std::cout << "     Category: " << passengerTrain.getCategory() << std::endl;
-    std::cout << "Train Status: " << passengerTrain.getTrainStatus() << std::endl;
+    (passengerTrain.getCycleAllowed()) ? std::cout << "     Cycle Allowed\n" : std::cout << "     Cycle Not Allowed\n";
+    (passengerTrain.getCategory()) ? std::cout << "Express" : std::cout << "All Stops";
+    (passengerTrain.getTrainStatus()) ? std::cout << "     Departed\n" : std::cout << "     Boarding\n";
 }
