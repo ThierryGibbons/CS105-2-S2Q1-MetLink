@@ -45,6 +45,7 @@ int main() {
     do
     {
         PassengerTrain newPassengerTrain;
+        GoodsTrain newGoodsTrain;
         std::cout << "Selection: ";
         std::cin >> choice;
 
@@ -260,7 +261,6 @@ int main() {
                     passengerTrains.push_back(newPassengerTrain);
                 }
                 else if (trainType_ == "goods") {
-                    GoodsTrain newGoodsTrain;
                     //Create Train
                     newGoodsTrain.setTrainNum(trainNum_);
                     newGoodsTrain.setTrainType(TrainType::Goods);
@@ -373,6 +373,9 @@ int main() {
                             break;
                     }
 
+
+                    //Add train to vector
+                    goodsTrains.push_back(newGoodsTrain);
                 }
                 else {
                     std::cout << "Invalid input";
