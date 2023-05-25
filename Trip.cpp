@@ -26,11 +26,11 @@ void Trip::setEndPlace(Location EndPlace) {
     this->EndPlace = EndPlace;
 }
 
-void Trip::setStartTime(int StartTime) {
+void Trip::setStartTime(std::string StartTime) {
     this->StartTime = StartTime;
 }
 
-void Trip::setEndTime(int EndTime) {
+void Trip::setEndTime(std::string EndTime) {
     this->EndTime = EndTime;
 }
 
@@ -59,11 +59,11 @@ Location Trip::getEndPlace() const {
     return EndPlace;
 }
 
-int Trip::getStartTime() const {
+std::string Trip::getStartTime() const {
     return StartTime;
 }
 
-int Trip::getEndTime() const {
+std::string Trip::getEndTime() const {
     return EndTime;
 }
 

@@ -19,8 +19,8 @@ public:
     void setPlatformNum(int PlatformNum);
     void setStartPlace(Location StartPlace);
     void setEndPlace(Location EndPlace);
-    void setStartTime(int StartTime);
-    void setEndTime(int EndTime);
+    void setStartTime(std::string StartTime);
+    void setEndTime(std::string EndTime);
     void setCompartments(int Compartments);
 //Getters
     std::string getDriver() const;
@@ -28,8 +28,8 @@ public:
     int getPlatformNum() const;
     Location getStartPlace() const;
     Location getEndPlace() const;
-    int getStartTime() const;
-    int getEndTime() const;
+    std::string getStartTime() const;
+    std::string getEndTime() const;
     int getCompartments() const;
 
 protected:
@@ -38,8 +38,8 @@ protected:
     int PlatformNum;
     Location StartPlace;
     Location EndPlace;
-    int StartTime;
-    int EndTime;
+    std::string StartTime;
+    std::string EndTime;
     int Compartments;
 };
 

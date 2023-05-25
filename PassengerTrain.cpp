@@ -5,6 +5,7 @@ Metlink
 */
 #include "PassengerTrain.h"
 
+//Setters
 void PassengerTrain::setDepatureTime(int DepatureTime) {
     this->DepatureTime = DepatureTime;
 }
@@ -13,10 +14,15 @@ void PassengerTrain::setCycleAllowed(bool CycleAllowed) {
     this->CycleAllowed = CycleAllowed;
 }
 
-void PassengerTrain::setCalegory(bool Calegory) {
-    this->Calegory = Calegory;
+void PassengerTrain::setCategory(bool Category) {
+    this->Category = Category;
 }
 
+void PassengerTrain::setTrainStatus(bool TrainStatus) {
+    this->TrainStatus = TrainStatus;
+}
+
+//Getters
 int PassengerTrain::getDepatureTime() const {
     return DepatureTime;
 }
@@ -25,6 +31,10 @@ bool PassengerTrain::getCycleAllowed() const {
     return CycleAllowed;
 }
 
-bool PassengerTrain::getCalegory() const {
-    return Calegory;
+bool PassengerTrain::getCategory() const {
+    return Category;
+}
+
+bool PassengerTrain::getTrainStatus() const {
+    return TrainStatus;
 }
