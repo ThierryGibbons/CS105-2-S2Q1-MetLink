@@ -18,5 +18,5 @@ void GoodsTrain::printGoodsTrains(const GoodsTrain& goodsTrain) {
     std::cout << "Train Number: " << goodsTrain.getTrainNum();
     std::cout << "     Platform Number: " << goodsTrain.getPlatformNum() << "\n";
     std::cout << goodsTrain.getStartPlace() << " -> " << goodsTrain.getEndPlace() << "\n";
-    std::cout << "Start Time: " << goodsTrain.getStartTime();
+    std::cout << "Start Time: " << goodsTrain.getStartTime() << "\n";
 }
