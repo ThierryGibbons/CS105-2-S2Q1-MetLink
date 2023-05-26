@@ -10,6 +10,7 @@ Metlink
 #include "TrackLine.h"
 #include "Location.h"
 #include <string>
+#include <stdexcept>
 
 class Trip : public Train {
 public:
