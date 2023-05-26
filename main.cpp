@@ -387,7 +387,7 @@ int main() {
                     goodsTrains.push_back(newGoodsTrain);
 
                     //Add train to hash map based on track line
-                    
+                    goodsTrainMap[newGoodsTrain.getLine()].push_back(newGoodsTrain);
                 }
                 else {
                     std::cout << "Invalid input";
