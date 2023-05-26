@@ -7,11 +7,14 @@ Metlink
 #include "GoodsTrain.h"
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 int main() {
 
-    std::vector<PassengerTrain> passengerTrains; //Working on this
-    std::vector<GoodsTrain> goodsTrains; //Working on this
+    std::vector<PassengerTrain> passengerTrains;
+    std::vector<GoodsTrain> goodsTrains;
+    std::unordered_map<std::string, std::vector<PassengerTrain>> passengerTrainMap;
+    std::unordered_map<std::string, std::vector<GoodsTrain>> goodsTrainMap;
 
     bool trainInput = true;
     int choice = 0;
@@ -26,26 +29,28 @@ int main() {
     std::string startTime_;
     std::string endTime_;
     int trackLine_;
+    std::string trackLine_string;
     int cycleAllowed_;
     int trainStatus_;
     int category_;
 
     // Title
-    std::cout << "=======\n";
-    std::cout << "Metlink\n";
-    std::cout << "=======\n\n";
-    std::cout << "====================\n";
 
-    // Menu
-    std::cout << "1. Create Train\n";
-    std::cout << "2. Print Train\n";
-    std::cout << "3. Print All Trains\n";
-    std::cout << "4. Exit\n";
 
     do
     {
         PassengerTrain newPassengerTrain;
         GoodsTrain newGoodsTrain;
+
+        // Menu
+        std::cout << "=======\n";
+        std::cout << "Metlink\n";
+        std::cout << "=======\n\n";
+        std::cout << "====================\n";
+        std::cout << "1. Create Train\n";
+        std::cout << "2. Print Train\n";
+        std::cout << "3. Print All Trains\n";
+        std::cout << "4. Exit\n";
         std::cout << "Selection: ";
         std::cin >> choice;
 
@@ -259,6 +264,9 @@ int main() {
 
                     //Add train to vector
                     passengerTrains.push_back(newPassengerTrain);
+
+                    //Add train to hash map based on track line
+                    passengerTrainMap[newPassengerTrain.getLine()].push_back(newPassengerTrain);
                 }
                 else if (trainType_ == "goods") {
                     //Create Train
@@ -376,6 +384,9 @@ int main() {
 
                     //Add train to vector
                     goodsTrains.push_back(newGoodsTrain);
+
+                    //Add train to hash map based on track line
+                    goodsTrainMap[newGoodsTrain.getLine()].push_back(newGoodsTrain);
                 }
                 else {
                     std::cout << "Invalid input";
@@ -383,7 +394,71 @@ int main() {
                 }
                 break;
             case 2:
-                // Print Train
+                //Print train
+                //get train, passenger or goods
+                std::cout << "\n=============\n"; //Title
+                std::cout << "\nPrint Train\n";
+                std::cout << "\n=============\n\n";
+                std::cout << "\n====================\n";
+
+                std::cout << "Select Train Type(eg. passenger, goods)";
+                std::cin >> trainType_;
+
+                std::cout << "Select Train Line\n1. Kapiti\n2. Hutt Valley\n3. Johnsonville\n4. Wairarapa\nSelection: ";
+                std::cin >> trackLine_;
+                switch (trackLine_)
+                {
+                    case 1:
+                        trackLine_string = "Kapiti";
+                        break;
+                    case 2:
+                        trackLine_string = "Hutt Valley";
+                        break;
+                    case 3:
+                        trackLine_string = "Johnsonville";
+                        break;
+                    case 4:
+                        trackLine_string = "Wairarapa";
+                        break;
+                    default:
+                        std::cout << "Invalid input";
+                        return 0;
+                }
+
+                std::cout << "\n====================\n";
+                if (trainType_ == "passenger")
+                {
+                    if (passengerTrainMap.find(trackLine_string) != passengerTrainMap.end())
+                    {
+                        std::cout << "\nPassenger Train Details:\n";
+                        for (const auto& passengerTrain : passengerTrainMap[trackLine_string]) //print all passenger trains
+                        {
+                            std::cout << "\n\n====================\n";
+                            newPassengerTrain.printPassengerTrains(passengerTrain);
+                            std::cout << "====================\n";
+                        }
+                    }
+                    else
+                    {
+                        std::cout << "No passenger trains on this line";
+                    }
+                } else if (trainType_ == "goods")
+                {
+                    if (goodsTrainMap.find(trackLine_string) != goodsTrainMap.end())
+                    {
+                        std::cout << "\nGoods Train Details:\n";
+                        for (const auto& goodsTrain : goodsTrainMap[trackLine_string]) //print all goods trains
+                        {
+                            std::cout << "\n\n====================\n";
+                            newGoodsTrain.printGoodsTrains(goodsTrain);
+                            std::cout << "====================\n";
+                        }
+                    }
+                    else
+                    {
+                        std::cout << "No goods trains on this line";
+                    }
+                }
                 break;
             case 3:
                 //Print train details
@@ -392,11 +467,22 @@ int main() {
                 std::cout << "\n=============\n\n";
                 std::cout << "\n====================\n";
 
-                std::cout << "\nPassenger Train Details\n";
+                std::cout << "\nPassenger Train Details:\n";
                 for (const auto& passengerTrain : passengerTrains) //print all passenger trains
                 {
-                    std::cout << "\n";
+                    std::cout << "\n\n====================\n";
                     newPassengerTrain.printPassengerTrains(passengerTrain);
+                    std::cout << "====================\n";
+                }
+
+                std::cout << "\n====================\n";
+
+                std::cout << "\nGoods Train Details:\n";
+                for (const auto& goodsTrain : goodsTrains) //print all goods trains
+                {
+                    std::cout << "\n\n====================\n";
+                    newGoodsTrain.printGoodsTrains(goodsTrain);
+                    std::cout << "====================\n";
                 }
                 break;
             case 4:
@@ -406,27 +492,9 @@ int main() {
                 std::cout << "Invalid Selection\n";
                 break;
         }
+
+        std::cout << "\n\n";
     } while (choice != 4);
-
-
-    // // Print the initial Passenger Train
-    // std::cout << "Passenger Train:" << std::endl;
-    // std::cout << "Train Number: " << passengerTrain.getTrainNum() << std::endl;
-    // std::cout << "Train Type: " << static_cast<int>(passengerTrain.getTrainType()) << std::endl;
-    // std::cout << "Driver: " << passengerTrain.getDriver() << std::endl;
-    // std::cout << "Line: " << static_cast<int>(passengerTrain.getLine()) << std::endl;
-    // std::cout << "Platform Number: " << passengerTrain.getPlatformNum() << std::endl;
-    // std::cout << "Start Place: " << static_cast<int>(passengerTrain.getStartPlace()) << std::endl;
-    // std::cout << "End Place: " << static_cast<int>(passengerTrain.getEndPlace()) << std::endl;
-    // std::cout << "Start Time: " << passengerTrain.getStartTime() << std::endl;
-    // std::cout << "End Time: " << passengerTrain.getEndTime() << std::endl;
-    // std::cout << "Compartments: " << passengerTrain.getCompartments() << std::endl;
-    // std::cout << "Depature Time: " << passengerTrain.getDepatureTime() << std::endl;
-    // std::cout << "Cycle Allowed: " << passengerTrain.getCycleAllowed() << std::endl;
-    // std::cout << "Calegory: " << passengerTrain.getCalegory() << std::endl;
-    // std::cout << std::endl;
-
-
 
     return 0;
 }

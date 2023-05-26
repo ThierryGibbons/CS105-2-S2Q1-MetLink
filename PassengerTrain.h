@@ -22,7 +22,7 @@ public:
     bool getCategory() const;
     bool getTrainStatus() const;
 
-    void printPassengerTrains(const PassengerTrain& passengerTrain) ;
+    void printPassengerTrains(const PassengerTrain& passengerTrain);
 
 protected:
     int DepatureTime;
